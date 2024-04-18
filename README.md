@@ -11,7 +11,7 @@ The first ones I've added are listed below.
 
 Individual power commands can be enabled or disabled from the Power Commands Renewed page in
 Tools -> Options in Visual Studio. Some Power Commands are enabled by default. Below is a list of the
-commands included in Power Commands Renewed for Visual Studio 2012. 
+commands included in Power Commands Renewed for Visual Studio 2022. 
 
 ### Format document on save 
 Enables formatting of tabs, spaces and other characters in a document to be saved. It is equivalent to using
