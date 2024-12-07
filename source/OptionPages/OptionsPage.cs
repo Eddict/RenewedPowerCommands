@@ -48,7 +48,13 @@ namespace Tasler.RenewedPowerCommands.OptionPages
 		[Description("Copies/Pastes a selected class's entire content to/from the clipboard. When pasting a class, it is renamed to avoid a compilation error. It can be executed from a single project item or a project item with dependent sub items.")]
 		public DisabledEnabled CopyPasteClassCommand { get; set; } = DisabledEnabled.Enabled;
 
-		public bool IsCommandEnabled(string commandName)
+        [Category("Commands")]
+        [DefaultValue(DisabledEnabled.Enabled)]
+        [DisplayName("Edit Project File")]
+        [Description("Edit the Project File in editor.")]
+        public DisabledEnabled EditProjectFileCommand { get; set; } = DisabledEnabled.Enabled;
+
+        public bool IsCommandEnabled(string commandName)
 		{
 			if (!s_commandNameMappings.TryGetValue(commandName, out var result))
 			{
@@ -65,6 +71,7 @@ namespace Tasler.RenewedPowerCommands.OptionPages
 			{ typeof(RemoveSortUsingsCommand).Name, p => p.RemoveAndSortUsingsCommand },
 			{ typeof(CopyClassCommand       ).Name, p => p.CopyPasteClassCommand },
 			{ typeof(PasteClassCommand      ).Name, p => p.CopyPasteClassCommand },
-		};
+            { typeof(EditProjectFileCommand ).Name, p => p.EditProjectFileCommand },
+        };
 	}
 }

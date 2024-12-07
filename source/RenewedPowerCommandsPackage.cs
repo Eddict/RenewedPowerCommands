@@ -118,7 +118,14 @@ namespace Tasler.RenewedPowerCommands
 			}
 		}
 
-		public DTE2 Dte => _dte ?? (_dte = this.GetService<DTE>() as DTE2);
+        public DTE2 Dte
+        {
+            get
+            {
+                ThreadHelper.ThrowIfNotOnUIThread();
+                return _dte ?? (_dte = this.GetService<DTE>() as DTE2);
+            }
+        }
 		private DTE2 _dte;
 
 		public OptionsPage OptionsPage => _optionsPage ?? (_optionsPage = (base.GetDialogPage(typeof(OptionsPage)) as OptionsPage));

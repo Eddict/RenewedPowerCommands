@@ -21,7 +21,14 @@ namespace Tasler.RenewedPowerCommands.Commands
 		{
 		}
 
-		protected static UIHierarchy SolutionExplorer => s_solutionExplorer ?? (s_solutionExplorer = Dte.ToolWindows.SolutionExplorer);
+        protected static UIHierarchy SolutionExplorer
+        {
+            get
+            {
+                ThreadHelper.ThrowIfNotOnUIThread();
+                return s_solutionExplorer ?? (s_solutionExplorer = Dte.ToolWindows.SolutionExplorer);
+            }
+        }
 
 		protected override bool CanExecute(OleMenuCommand command)
 		{

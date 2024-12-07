@@ -15,7 +15,14 @@ namespace Tasler.RenewedPowerCommands.Commands
 		protected static IServiceProvider ServiceProvider => _serviceProvider;
 		private static IServiceProvider _serviceProvider;
 
-		protected static DTE2 Dte => _dte ?? (_dte = (DTE2)ServiceProvider.GetService<DTE>());
+        protected static DTE2 Dte
+        {
+            get
+            {
+                Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
+                return _dte ?? (_dte = (DTE2)ServiceProvider.GetService<DTE>());
+            }
+        }
 		private static DTE2 _dte;
 
 		public static Document GetActiveEditorDocument()

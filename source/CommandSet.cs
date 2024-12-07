@@ -24,9 +24,10 @@ namespace Tasler.RenewedPowerCommands
 			_menuCommandService.AddCommand(new RemoveSortUsingsCommand(_serviceProvider));
 			_menuCommandService.AddCommand(new CopyClassCommand(_serviceProvider));
 			_menuCommandService.AddCommand(new PasteClassCommand(_serviceProvider));
-		}
+            _menuCommandService.AddCommand(new EditProjectFileCommand(_serviceProvider));
+        }
 
-		private readonly IServiceProvider _serviceProvider;
+        private readonly IServiceProvider _serviceProvider;
 		private readonly OleMenuCommandService _menuCommandService;
 	}
 }

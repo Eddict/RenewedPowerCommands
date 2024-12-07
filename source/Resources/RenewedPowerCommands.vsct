@@ -186,5 +186,8 @@
 			<IDSymbol name="cmdidPasteClassCommand" value="0x201A" />
 			<IDSymbol name="grpidPasteClassCommandGroup1" value="0x3F20" />
 		</GuidSymbol>
-	</Symbols>
+    <GuidSymbol name="guidEditProjectFileCommand" value="{888DA324-B21F-4658-B663-F22884A3AF1D}">
+      <IDSymbol name="cmdidEditProjectFileCommand" value="0x0121" />
+    </GuidSymbol>
+  </Symbols>
 </CommandTable>
